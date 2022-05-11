@@ -6,9 +6,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import Exceldemop.Excelutildemo;
@@ -20,14 +22,22 @@ public class Dataexllogin {
 	WebDriver driver;
 	loginpage lp;
 	Homepage hp;
+	@Parameters("browser")
 	@BeforeTest
 	
-	public void setup() {
+	public void setup(String browser) {
+		System.out.println("the browser is:"+browser);
+		if(browser.contains("chrome")) {
 		String dpath="C:\\Users\\Admin_SRV\\eclipse-workspace\\Practicedemotest\\src\\test\\resources\\drivers\\chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", dpath);
 		driver=new ChromeDriver();
+	}else if(browser.contains("firefox")) {
+		String gpath="C:\\Users\\Admin_SRV\\git\\practicetestdemo\\Practicedemotest\\src\\test\\resources\\drivers\\geckodriver.exe";
+		System.setProperty("webdriver.gecko.driver", gpath);
+		driver=new FirefoxDriver();
+		
 	}
-	
+	}
 	
 	@DataProvider(name="testdata")
 	

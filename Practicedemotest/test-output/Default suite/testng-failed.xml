@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tests.Dataexllogin">
+      <class name="Brokenlinksandimages.linkbrokennimages">
         <methods>
+          <include name="testExecution"/>
           <include name="setup"/>
-          <include name="teardown"/>
-          <include name="finaldata" invocation-numbers="5 12"/>
         </methods>
-      </class> <!-- Tests.Dataexllogin -->
+      </class> <!-- Brokenlinksandimages.linkbrokennimages -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
