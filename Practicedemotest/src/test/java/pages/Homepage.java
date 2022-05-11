@@ -55,8 +55,9 @@ public class Homepage {
 		phone.sendKeys("98xxxxxxxx");
 	}
 	
-	public void savebtn() {
+	public void savebtn() throws InterruptedException {
 		save.click();
+		Thread.sleep(3000);
 	}
 	
 	public void completed() {

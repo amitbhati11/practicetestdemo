@@ -39,8 +39,9 @@ public class loginpage {
 	public void us_name(String username) {
 		fulname.sendKeys(username);
 	}
-	public void us_pass(String password) {
+	public void us_pass(String password) throws InterruptedException {
 		pasword.sendKeys(password);
+		Thread.sleep(2000);
 	}
 	public void loginbtn() {
 		lognbtn.click();
